@@ -1,0 +1,9 @@
+customer_id,customer_name,email,phone,city,policy_id,premium,updated_at
+C001,Rohit N,ROHIT@GMAIL.COM,9876543210,Hyderabad,P1001,25000,2026-10-01 10:00:00
+C002,Priya S,priya@gmail.com,9876543211,Chennai,P1002,30000,2026-10-01 10:00:00
+C003,Rohit N,rohit@gmail.com,9876543210,Hyderabad,P1003,15000,2026-10-01 10:00:00
+C004,,abc@gmail.com,,Mumbai,P1004,18000,2026-10-01 10:00:00
+C005,Arun Kumar,ARUN@GMAIL.COM,9876543212,Chennai,P1005,26000,2026-10-10 21:00:00
+C006,Meena R,meena@gmail.com,9876543213,Chennai,P1006,-5000,2026-10-01 10:00:00
+C007,Arun Kumar,arun@gmail.com,9876543212,Bangalore,P1007,12000,2026-10-01 10:00:00
+C008,Neha Sharma,neha@gmail.com,9876543214,HYDERABAD,P1008,20000,2026-10-06 17:00:00
