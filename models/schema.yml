@@ -1,0 +1,133 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Standardized customer and policy data"
+
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        data_tests:
+          - not_null
+
+      - name: customer_name
+        description: "Customer name"
+        data_tests:
+          - not_null
+
+      - name: email
+        description: "Customer email address"
+        data_tests:
+          - not_null
+
+      - name: premium
+        description: "Insurance policy premium"
+        data_tests:
+          - not_null
+
+
+  - name: dq_customer_exceptions
+    description: "Records identified by data quality rules, including missing values, invalid premiums, and duplicate phone numbers"
+
+    columns:
+      - name: customer_id
+        description: "Customer identifier associated with the DQ exception"
+
+      - name: customer_name
+        description: "Customer name from the standardized customer data"
+
+      - name: email
+        description: "Standardized customer email address"
+
+      - name: phone
+        description: "Customer phone number"
+
+      - name: city
+        description: "Standardized customer city"
+
+      - name: policy_id
+        description: "Insurance policy identifier"
+
+      - name: premium
+        description: "Insurance policy premium"
+
+      - name: dq_rule
+        description: "Data quality rule that identified the exception"
+
+      - name: severity
+        description: "Severity assigned to the data quality exception"
+
+
+  - name: customer_360
+    description: "Customer-level 360 view aggregating policy count, total premium, and average premium"
+
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+
+      - name: customer_name
+        description: "Customer name"
+
+      - name: email
+        description: "Standardized customer email address"
+
+      - name: phone
+        description: "Customer phone number"
+
+      - name: city
+        description: "Standardized customer city"
+
+      - name: policy_count
+        description: "Number of insurance policies associated with the customer"
+
+      - name: total_premium
+        description: "Total premium across all policies associated with the customer"
+
+      - name: average_premium
+        description: "Average premium across the customer's policies"
+
+
+
+
+  - name: dq_summary
+    description: "Summary metrics for customer data quality issues"
+
+    columns:
+      - name: total_records
+        description: "Total number of customer records"
+
+        data_tests:
+          - not_null
+
+      - name: unique_customers
+        description: "Number of unique customers"
+
+        data_tests:
+          - not_null
+
+      - name: customers_with_issues
+        description: "Number of unique customers affected by one or more DQ issues"
+
+        data_tests:
+          - not_null
+
+      - name: total_issue_occurrences
+        description: "Total number of DQ issue occurrences"
+
+        data_tests:
+          - not_null
+
+      - name: data_quality_percentage
+        description: "Percentage of customer records without identified DQ issues"
+
+        data_tests:
+          - not_null
+
+      - name: high_severity_issues
+        description: "Number of high-severity data quality issue occurrences"
+
+      - name: medium_severity_issues
+        description: "Number of medium-severity data quality issue occurrences"
+
+      - name: low_severity_issues
+        description: "Number of low-severity data quality issue occurrences"
